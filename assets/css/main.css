@@ -1,0 +1,154 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+h1,
+h2 {
+  font-family: var(--font-title);
+  font-weight: 500;
+}
+
+body {
+  font-family: var(--font-text);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  padding: 0.5rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+:root {
+  --color-text: #000000;
+  --color-bg: #f1f8ff;
+  --color-primary: #ff0409;
+  --color-secondary: #118aff;
+
+  --font-title: "Cookie", cursive;
+  --font-text: "Roboto", sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.9rem;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  height: 34px;
+}
+.header-nav-btns {
+  display: flex;
+  gap: 0.7rem;
+}
+.btn {
+  font-family: var(--font-title);
+  font-weight: 500;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+  color: var(--color-bg);
+}
+.btn-blue {
+  background: var(--color-secondary);
+}
+.btn-red {
+  background: var(--color-primary);
+}
+
+.hero {
+  max-width: 90%;
+  margin: auto;
+  padding: 2rem 0 0 0;
+}
+.hero img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+.content-container h1 {
+  font-size: 2.2rem;
+}
+.content-container button {
+  font-size: 2rem;
+  padding: 0.5rem 3rem;
+}
+
+/* SIGNUP */
+
+.signup-titles-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.signup-titles-container h1 {
+  font-size: 2.2rem;
+}
+.main-signup-container {
+  display: flex;
+  flex-direction: column;
+
+  padding: 2rem 0;
+  min-height: 90vh;
+}
+
+.main-signup-container form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+
+  justify-content: center;
+  gap: 1rem;
+}
+.main-signup-container button {
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+footer {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  padding: 1rem 0;
+  text-align: center;
+}
