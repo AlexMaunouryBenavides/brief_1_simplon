@@ -1,6 +1,7 @@
 const form = document.getElementById("registerForm");
 
 const users = JSON.parse(localStorage.getItem("users")) || [];
+console.log(users);
 
 function validation(firstname, lastname, email, password) {
   if (!firstname || !lastname || !email || !password) {

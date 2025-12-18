@@ -15,11 +15,15 @@
   <body>
     <!-- HEADER -->
     <header>
-      <a href="/index.html"><img class="logo" src="/assets/images/logo.png" alt="logo" /></a>
+      <a href="/index.html"
+        ><img class="logo" src="/assets/images/logo.png" alt="logo"
+      /></a>
       <!-- <img class="hamgurger" src="/assets/images/hamburger.svg" alt="menu hamburger icon" /> -->
       <div class="header-nav-btns">
         <a href="/login.html"><button class="btn btn-blue">Login</button></a>
-        <a href="/register.html"><button class="btn btn-red">Register</button></a>
+        <a href="/register.html"
+          ><button class="btn btn-red">Register</button></a
+        >
       </div>
     </header>
 
@@ -38,8 +42,13 @@
           <label for="password">Password</label>
           <input type="password" id="password" name="password" />
         </div>
-
-        <button class="btn btn-red" type="submit">Join</button>
+        <div class="button-container">
+          <button class="btn btn-red" type="submit">Join</button>
+          <p>
+            don't have an account ?
+            <a href="/register.html"><span> register here</span></a>
+          </p>
+        </div>
       </form>
     </section>
 
