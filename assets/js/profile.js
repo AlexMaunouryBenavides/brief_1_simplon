@@ -1,9 +1,12 @@
 const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 const showUser = document.getElementById("userprofile");
 
-if (!currentUser) {
-  window.location.href = "login.html";
+export function redirectIfNoCurrentUser(user) {
+  if (!user) {
+    window.location.href = "login.html";
+  }
 }
+redirectIfNoCurrentUser(currentUser);
 
 showUser.innerHTML = `
 <section class="userprofile-container">
