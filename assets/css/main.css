@@ -37,6 +37,11 @@ textarea,
 select {
   font: inherit;
   padding: 0.5rem;
+  background-color: var(--color-bg);
+
+  outline: none;
+  border: solid 1px var(--color-text);
+  border-radius: 5px;
 }
 
 button {
@@ -92,6 +97,7 @@ header {
   object-fit: cover;
   height: 100%;
   width: 100%;
+  max-height: 600px;
 }
 .content-container {
   display: flex;
@@ -111,6 +117,14 @@ header {
 
 /* SIGNUP */
 
+.main-signup-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+  margin: auto;
+  padding: 2rem 0;
+  min-height: 90vh;
+}
 .signup-titles-container {
   display: flex;
   flex-direction: column;
@@ -119,14 +133,6 @@ header {
 .signup-titles-container h1 {
   font-size: 2.2rem;
 }
-.main-signup-container {
-  display: flex;
-  flex-direction: column;
-
-  padding: 2rem 0;
-  min-height: 90vh;
-}
-
 .main-signup-container form {
   display: flex;
   flex-direction: column;

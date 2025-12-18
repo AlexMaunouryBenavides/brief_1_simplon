@@ -10,25 +10,34 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/assets/css/main.css" />
-    <title>sign in</title>
+    <title>register</title>
   </head>
   <body>
     <!-- HEADER -->
     <header>
-      <img class="logo" src="/assets/images/logo.png" alt="logo" />
+      <a href="/index.html"><img class="logo" src="/assets/images/logo.png" alt="logo" /></a>
       <!-- <img class="hamgurger" src="/assets/images/hamburger.svg" alt="menu hamburger icon" /> -->
       <div class="header-nav-btns">
-        <button class="btn btn-blue">Login</button>
-        <button class="btn btn-red">Register</button>
+        <a href="/login.html"><button class="btn btn-blue">Login</button></a>
+        <a href="/register.html"><button class="btn btn-red">Register</button></a>
       </div>
     </header>
 
     <section class="main-signup-container">
       <div class="signup-titles-container">
-        <h1>Welcome back</h1>
-        <p>login to access your account</p>
+        <h1>Get started</h1>
+        <p>create an account to explore app</p>
       </div>
-      <form action="#">
+      <form id="registerForm">
+        <div class="input-container">
+          <label for="firstname">First name</label>
+          <input type="text" id="firstname" name="firstname" />
+        </div>
+        <div class="input-container">
+          <label for="lastname">Last name</label>
+          <input type="text" id="lastname" name="lastname" />
+        </div>
+
         <div class="input-container">
           <label for="email">Email</label>
           <input type="email" id="email" name="email" />
@@ -48,4 +57,5 @@
       <p>Created by Alex</p>
     </footer>
   </body>
+  <script src="/assets/js/register.js"></script>
 </html>
