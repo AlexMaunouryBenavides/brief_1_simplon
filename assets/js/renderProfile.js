@@ -10,5 +10,5 @@ renderCurrentUser(currentUser, showUser);
 const disconnectBtn = document.getElementById("disconnect");
 disconnectBtn.addEventListener("click", (e) => {
   localStorage.removeItem("currentUser");
-  window.location.href = "/";
+  window.location.href = "./index.html";
 });
