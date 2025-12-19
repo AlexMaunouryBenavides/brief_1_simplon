@@ -1,5 +1,4 @@
 const form = document.getElementById("registerForm");
-
 const users = JSON.parse(localStorage.getItem("users")) || [];
 
 function toggleError(inputId, message, show) {
@@ -31,7 +30,11 @@ function validation(firstname, lastname, email, password) {
   }
 
   if (password.length < 3 || password.length > 12) {
-    toggleError("password", "password must be between 3 and 12 caracters", true);
+    toggleError(
+      "password",
+      "password must be between 3 and 12 caracters",
+      true
+    );
     isValid = false;
   } else {
     toggleError("password", "", false);
