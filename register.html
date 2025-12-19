@@ -15,15 +15,11 @@
   <body>
     <!-- HEADER -->
     <header>
-      <a href="/index.html"
-        ><img class="logo" src="/assets/images/logo.png" alt="logo"
-      /></a>
+      <a href="/index.html"><img class="logo" src="/assets/images/logo.png" alt="logo" /></a>
       <!-- <img class="hamgurger" src="/assets/images/hamburger.svg" alt="menu hamburger icon" /> -->
       <div class="header-nav-btns">
         <a href="/login.html"><button class="btn btn-blue">Login</button></a>
-        <a href="/register.html"
-          ><button class="btn btn-red">Register</button></a
-        >
+        <a href="/register.html"><button class="btn btn-red">Register</button></a>
       </div>
     </header>
 
@@ -36,20 +32,24 @@
         <div class="input-container">
           <label for="firstname">First name</label>
           <input type="text" id="firstname" name="firstname" />
+          <p class="formError">Fiels is empty</p>
         </div>
         <div class="input-container">
           <label for="lastname">Last name</label>
           <input type="text" id="lastname" name="lastname" />
+          <p class="formError">Fiels is empty</p>
         </div>
 
         <div class="input-container">
           <label for="email">Email</label>
           <input type="email" id="email" name="email" />
+          <p class="formError">Fiels is empty</p>
         </div>
 
         <div class="input-container">
           <label for="password">Password</label>
           <input type="password" id="password" name="password" />
+          <p class="formError">Fiels is empty</p>
         </div>
 
         <div class="button-container">
@@ -67,5 +67,5 @@
       <p>Created by Alex</p>
     </footer>
   </body>
-  <script src="/assets/js/register.js"></script>
+  <script src="/assets/js/register.js" type="module"></script>
 </html>

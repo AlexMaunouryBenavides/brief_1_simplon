@@ -1,24 +1,49 @@
 const form = document.getElementById("registerForm");
 
 const users = JSON.parse(localStorage.getItem("users")) || [];
-console.log(users);
+
+function toggleError(inputId, message, show) {
+  const input = document.getElementById(inputId);
+  const errorMessage = input.nextElementSibling;
+
+  if (show) {
+    errorMessage.textContent = message;
+    errorMessage.classList.add("visible");
+  } else {
+    errorMessage.classList.remove("visible");
+  }
+}
 
 function validation(firstname, lastname, email, password) {
-  if (!firstname || !lastname || !email || !password) {
-    alert("All fields are required");
-    return false;
+  let isValid = true;
+  if (!firstname) {
+    toggleError("firstname", "Firstname is required", true);
+    isValid = false;
+  } else {
+    toggleError("firstname", "", false);
+  }
+
+  if (!lastname) {
+    toggleError("lastname", "lastname is required", true);
+    isValid = false;
+  } else {
+    toggleError("lastname", "", false);
   }
 
   if (password.length < 3 || password.length > 12) {
-    alert("Password must be between 3 and 12 characters");
-    return false;
+    toggleError("password", "password must be between 3 and 12 caracters", true);
+    isValid = false;
+  } else {
+    toggleError("password", "", false);
   }
 
-  if (!email.includes("@")) {
-    alert("Email must contain an @ .");
-    return false;
+  if (!email || !email.includes("@")) {
+    toggleError("email", "email must contains an @", true);
+    isValid = false;
+  } else {
+    toggleError("email", "", false);
   }
-  return true;
+  return isValid;
 }
 
 function register(firstname, lastname, email, password) {

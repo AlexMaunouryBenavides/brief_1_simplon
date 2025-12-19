@@ -1,33 +1,25 @@
-const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-const showUser = document.getElementById("userprofile");
-
-export function redirectIfNoCurrentUser(user) {
+export function redirectIfNoCurrentUser(user, location = window.location) {
   if (!user) {
-    window.location.href = "login.html";
+    location.href = "login.html";
   }
 }
-redirectIfNoCurrentUser(currentUser);
 
-showUser.innerHTML = `
+export function renderCurrentUser(user, container) {
+  container.innerHTML = `
 <section class="userprofile-container">
 <div class="userprofile-titles">
-<h1>Hello ${currentUser.firstname}</h1>
-<p>${currentUser.lastname}</p>
+<h1>Hello ${user.firstname}</h1>
+<p>${user.lastname}</p>
 </div>
 
 <div class="userprofile-content">
-<p>Your mail is ${currentUser.email}</p>
+<p>Your mail is ${user.email}</p>
 <p>
-And i could show whatever info you gave me,</br> like your password :<span class ="showpassword">${currentUser.password}</span>
+And i could show whatever info you gave me,</br> like your password :<span class ="showpassword">${user.password}</span>
           </p>
           </div>
           
           <button id="disconnect" class="btn btn-red">Disconnect</button>
           </section>
           `;
-const disconnectBtn = document.getElementById("disconnect");
-
-disconnectBtn.addEventListener("click", (e) => {
-  localStorage.removeItem("currentUser");
-  window.location.href = "/";
-});
+}
