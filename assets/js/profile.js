@@ -15,7 +15,7 @@ export function renderCurrentUser(user, container) {
 <div class="userprofile-content">
 <p>Your mail is ${user.email}</p>
 <p>
-And i could show whatever info you gave me,</br> like your password :<span class ="showpassword">${user.password}</span>
+And i could show whatever info you gave me,</br> like your password :<span class ="showpassword">${user.registerMdpHashed}</span>
           </p>
           </div>
           

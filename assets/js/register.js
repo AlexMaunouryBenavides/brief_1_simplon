@@ -1,3 +1,4 @@
+import { digestMessage } from "./test/password.js";
 const form = document.getElementById("registerForm");
 const users = JSON.parse(localStorage.getItem("users")) || [];
 
@@ -49,10 +50,11 @@ function validation(firstname, lastname, email, password) {
   return isValid;
 }
 
-function register(firstname, lastname, email, password) {
+async function register(firstname, lastname, email, password) {
   if (!validation(firstname, lastname, email, password)) {
     return;
   }
+  const registerMdpHashed = await digestMessage(password);
 
   const userExist = users.some((user) => user.email === email);
   if (userExist) {
@@ -60,7 +62,7 @@ function register(firstname, lastname, email, password) {
     return;
   }
 
-  users.push({ firstname, lastname, email, password });
+  users.push({ firstname, lastname, email, registerMdpHashed });
   localStorage.setItem("users", JSON.stringify(users));
 
   window.location.href = "login.html";

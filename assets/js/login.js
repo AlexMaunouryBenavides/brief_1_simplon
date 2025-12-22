@@ -1,15 +1,17 @@
+import { digestMessage } from "./test/password.js";
 const loginForm = document.getElementById("loginForm");
 
 const users = JSON.parse(localStorage.getItem("users")) || [];
 
-function login(email, password) {
+async function login(email, password) {
   const user = users.find((id) => id.email === email);
   if (!user) {
     alert("Email not found");
     return;
   }
+  const mdpHashed = await digestMessage(password);
 
-  if (user.password !== password) {
+  if (user.registerMdpHashed !== mdpHashed) {
     alert("Wrong password");
     return;
   }
